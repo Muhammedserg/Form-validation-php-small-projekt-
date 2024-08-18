@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formular</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registrierungsformular</h1>
+        <form method="post" action="form-validation.php">
+            <div class="form-group">
+                <label for="username">Nutzername:</label>
+                <input type="text" id="username" name="username" required minlength="4" maxlength="16" pattern="[^\s]+" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Mail Adresse:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password" required minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+" />
+            </div>
+
+            <div class="form-group">
+                <label>Geschlecht:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required />
+                    <label for="male">Männlich</label>
+                    <input type="radio" id="female" name="gender" value="female" required />
+                    <label for="female">Weiblich</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Länderauswahl:</label>
+                <select id="country" name="country" required>
+                    <option value="germany">Deutschland</option>
+                    <option value="france">Frankreich</option>
+                    <option value="spain">Spanien</option>
+                    <option value="Ägypten">Ägypter</option>
+                    <option value="Sweden">Sweden</option>
+                
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="agreement">AGBs akzeptieren:</label>
+                <input type="checkbox" id="agreement" name="agreement" required />
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Registrieren</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
